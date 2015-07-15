@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Foursquare API
 gem 'foursquare2', '~> 2.0.2'
 
+# bootstrap-sass is a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.3.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

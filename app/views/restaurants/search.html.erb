@@ -1,0 +1,33 @@
+<h1>Search Restaurants</h1>
+<p>Find me in app/views/restaurants/search.html.erb</p>
+
+<small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
+
+<%= form_tag do %>
+	<%= text_field_tag :search %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<small>Into the following table, you must list the restaurants that user found (remove this suggestion)</small>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Category</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>A 1</td>
+			<td>A 2</td>
+			<td>Favorite button</td>
+		</tr>
+		<tr>
+			<td>B 1</td>
+			<td>B 2</td>
+			<td>Favorite button</td>
+		</tr>
+	</tbody>
+</table>
