@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
-  socket: /tmp/mysql.sock
+  socket:  /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
