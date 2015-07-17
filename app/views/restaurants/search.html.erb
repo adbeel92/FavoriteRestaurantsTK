@@ -1,9 +1,9 @@
 <h1>Search Restaurants</h1>
 <p>Find me in app/views/restaurants/search.html.erb</p>
 
-<small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
+<small>Into the following form, you must insert a text to be filtered to get restaurants</small>
 
-<%= form_tag do %>
+<%= form_tag(restaurants_search_path, method: :get) do %>
 	<%= text_field_tag :search %>
 	<%= submit_tag "Search" %>
 <% end %>
@@ -19,15 +19,14 @@
 		</tr>
 	</thead>
 	<tbody>
+		<% @restaurantes.each do |r| %>
 		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
-			<td>Favorite button</td>
+			<td><%= r["name"]%></td>
+			<td><%= r["categories"][0]["name"]%></td>
+			<td>button_tag(type: 'button') do
+			end
+			# => <button name="Favorito" type="submit">Favorito</button></td>
 		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-			<td>Favorite button</td>
-		</tr>
+		<% end %>
 	</tbody>
 </table>
