@@ -1,3 +1,9 @@
+<style>
+#class{
+	margin-left: 300px
+}
+</style>
+<body>
 <h1>Favorite Restaurants</h1>
 <p>Find me in app/views/restaurants/favorite.html.erb</p>
 
@@ -6,18 +12,17 @@
 <table>
 	<thead>
 		<tr>
-			<th>Column 1</th>
-			<th>Column 2</th>
+			<th>Name</th>			
+			<th>Category</th>
 		</tr>
 	</thead>
 	<tbody>
+		<% @favorites.each do |favorite| %>	
 		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
+			<td id = "name"><%= favorite.name %></td>
+			<td id = "class"><%= favorite.category %></td>			
 		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-		</tr>
+		<%end%>
 	</tbody>
 </table>
+</body>
