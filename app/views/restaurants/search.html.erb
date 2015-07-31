@@ -3,7 +3,7 @@
 
 <small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
 
-<%= form_tag do %>
+<%= form_tag restaurants_search_path, method: :get do %>
 	<%= text_field_tag :search %>
 	<%= submit_tag "Search" %>
 <% end %>
@@ -14,7 +14,9 @@
 	<thead>
 		<tr>
 			<th>Name</th>
+
 			<th>Category</th>
+
 			<th></th>
 		</tr>
 	</thead>
@@ -23,6 +25,15 @@
 			<td>A 1</td>
 			<td>A 2</td>
 			<td>Favorite button</td>
+			<%= search_form_for @search do |f| %>
+ 			 <div class="field">
+   	 <%= f.label :name_cont, "Name contains" %>
+   	<%= f.text_field :name_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+
 		</tr>
 		<tr>
 			<td>B 1</td>
