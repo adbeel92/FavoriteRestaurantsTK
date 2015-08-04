@@ -11,13 +11,15 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
-		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-		</tr>
+		<% @parameter1.each do |nombRestaurant| %>
+			<tr>
+				<td><%=nombRestaurant%></td>
+				<td>A 2</td>
+			</tr>
+			<tr>
+				<td>B 1</td>
+				<td>B 2</td>
+			</tr>
+		<% end %>
 	</tbody>
 </table>

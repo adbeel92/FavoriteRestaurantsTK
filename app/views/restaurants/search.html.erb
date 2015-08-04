@@ -3,31 +3,33 @@
 
 <small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
 
-<%= form_tag do %>
+<%= form_tag restaurants_search_path, method: :get do %>
 	<%= text_field_tag :search %>
 	<%= submit_tag "Search" %>
 <% end %>
 
 <small>Into the following table, you must list the restaurants that user found (remove this suggestion)</small>
 
+
+
 <table>
 	<thead>
 		<tr>
-			<th>Name</th>
-			<th>Category</th>
-			<th></th>
+			<th>Nombre</th>
+			<th>Favorito</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
-			<td>Favorite button</td>
-		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-			<td>Favorite button</td>
-		</tr>
+		<% @result.each do |restaurant| %>
+			<tr>
+				<td><%= restaurant.name %></td>
+				<td> 
+					<form method="get" action="favorite">
+						<input type="hidden" name="name" value="<%= restaurant.name %>">
+    					<button type="submit">Favorito</button>
+					</form>
+				</td>
+			</tr>
+		<% end %>
 	</tbody>
 </table>
