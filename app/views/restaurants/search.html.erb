@@ -3,8 +3,9 @@
 
 <small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
 
+<%= @ciudad %>
 <%= form_tag do %>
-	<%= text_field_tag :search %>
+	<%= text_field_tag :search,@ciudad %>
 	<%= submit_tag "Search" %>
 <% end %>
 
@@ -13,7 +14,7 @@
 <table>
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Nombre</th>
 			<th>Category</th>
 			<th></th>
 		</tr>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codRestaurante: MyString
+  nombreRestaurante: MyString
+  codCiudad: 
+
+two:
+  codRestaurante: MyString
+  nombreRestaurante: MyString
+  codCiudad: 
