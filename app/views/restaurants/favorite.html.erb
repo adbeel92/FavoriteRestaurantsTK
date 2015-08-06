@@ -1,23 +1,22 @@
 <h1>Favorite Restaurants</h1>
-<p>Find me in app/views/restaurants/favorite.html.erb</p>
-
-<small>Into the following table, you must list the favorite restaurants (remove this suggestion)</small>
 
 <table>
 	<thead>
 		<tr>
-			<th>Column 1</th>
-			<th>Column 2</th>
+			<th>Name</th>
+			<th>Category</th>
 		</tr>
 	</thead>
 	<tbody>
+	  <% unless @favorites.nil? %>
+	    <% @favorites.each do |f|  %>
 		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
+			<td><%= f.name %></td>
+			<td><%=f.category %></td>
 		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-		</tr>
+	  	<% end %>
+	  <% else %>
+	  	<p> @favorites is empty! </p>
+	  <% end %>
 	</tbody>
 </table>
