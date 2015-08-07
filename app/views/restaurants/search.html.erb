@@ -3,7 +3,7 @@
 
 <small>Into the following form, you must insert a text to be filtered to get restaurants (remove this suggestion)</small>
 
-<%= form_tag do %>
+<%= form_tag(restaurants_search_path, :method =>'get') do %>
 	<%= text_field_tag :search %>
 	<%= submit_tag "Search" %>
 <% end %>
@@ -13,21 +13,25 @@
 <table>
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Name </th>
 			<th>Category</th>
 			<th></th>
 		</tr>
-	</thead>
-	<tbody>
+	</thead>	
+	<tbody> 
+
+		<% @restaurants.each do |rest| %>
 		<tr>
-			<td>A 1</td>
-			<td>A 2</td>
-			<td>Favorite button</td>
+			<td> <%=rest["name"]%> </td>
+			<td> <%=rest["categories"][0]["name"]%> 	</td>
+			<td> 
+				<%=form_tag restaurants_create_favorite_path, method: "post", remote:true do %>
+				<%=hidden_field_tag :name, rest["name"] %>
+				<%=hidden_field_tag :category, rest["categories"][0]["name"]%>
+				<%=submit_tag "Añadir a mis favoritos"%>
+				<%end%>
+			</td>%>
 		</tr>
-		<tr>
-			<td>B 1</td>
-			<td>B 2</td>
-			<td>Favorite button</td>
-		</tr>
+		<%end%>
 	</tbody>
 </table>
