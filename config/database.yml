@@ -15,7 +15,7 @@ development:
   <<: *default
   database: fav_restaurants_development
   username: root
-  password: root
+  password: tekton
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,4 +24,4 @@ test:
   <<: *default
   database: fav_restaurants_test
   username: root
-  password: root
+  password: tekton
